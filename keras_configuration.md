@@ -1,8 +1,17 @@
 In the latest version of Keras, the default *backend* is *tensorflow* and *image_dim_ordering* is *tf*. You need to change them. 
 
-For example, using `Keras 1.2` and `Theano`, you may set configuration as follows. 
+1. `Keras 2.x + TensorFlow` configuration file of Keras: ~/.keras/keras.json
 
-# configuration file of Keras: ~/.keras/keras.json
+```
+{
+    "epsilon": 1e-07,
+    "floatx": "float32",
+    "image_data_format": "channels_first",
+    "backend": "tensorflow"
+}
+```
+
+2. `Keras 1.2 + Theano` configuration file of Keras: ~/.keras/keras.json
 ```
 {
     "image_dim_ordering": "th",
