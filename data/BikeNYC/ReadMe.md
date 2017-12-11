@@ -5,7 +5,7 @@ BikeNYC: New-Flow/End-Flow at NYC
 
 `Junbo Zhang, Yu Zheng, Dekang Qi. Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction. In AAAI 2017. `
 
-Download data from [OneDrive](https://1drv.ms/f/s!Akh6N7xv3uVmhOhCx1aK_Gpk8zK5JQ) or [BaiduYun](http://pan.baidu.com/s/1mhIPrRE)
+Download data from [OneDrive](https://1drv.ms/f/s!Akh6N7xv3uVmhOhCtwaiDRy5oDVIug) or [BaiduYun](http://pan.baidu.com/s/1mhIPrRE)
 
 Please check the data with `md5sum` command: 
 ```
