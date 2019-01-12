@@ -20,6 +20,7 @@ mse = MSE = mean_squared_error
 
 def masked_mean_squared_error(y_true, y_pred):
     idx = (y_true > 1e-6).nonzero()
+#    nonzero()返回序列中的非零索引值
     return K.mean(K.square(y_pred[idx] - y_true[idx]))
 
 
