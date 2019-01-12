@@ -20,6 +20,8 @@ def stat(fname):
         te = time.strptime("%04i-%02i-%02i" % (year, month, day), "%Y-%m-%d")
         nb_timeslot = (time.mktime(te) - time.mktime(ts)) / (0.5 * 3600) + 48
         ts_str, te_str = time.strftime("%Y-%m-%d", ts), time.strftime("%Y-%m-%d", te)
+        
+        # nb_timelot 返回有多少半个小时+48 因为采样为半小时     
         return nb_timeslot, ts_str, te_str
 
     with h5py.File(fname) as f:
