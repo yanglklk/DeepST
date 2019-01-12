@@ -20,6 +20,8 @@ from .STMatrix import STMatrix
 # parameters
 DATAPATH = Config().DATAPATH
 
+#timeslots 预测时间点
+
 
 def load_holiday(timeslots, fname=os.path.join(DATAPATH, 'TaxiBJ', 'BJ_Holiday.txt')):
     f = open(fname, 'r')
@@ -30,6 +32,8 @@ def load_holiday(timeslots, fname=os.path.join(DATAPATH, 'TaxiBJ', 'BJ_Holiday.t
         if slot[:8] in holidays:
             H[i] = 1
     print(H.sum())
+    
+    # 将属于节假日的历史数据置1，非假日置0    
     # print(timeslots[H==1])
     return H[:, None]
 
@@ -71,6 +75,8 @@ def load_meteorol(timeslots, fname=os.path.join(DATAPATH, 'TaxiBJ', 'BJ_Meteorol
     print("shape: ", WS.shape, WR.shape, TE.shape)
 
     # concatenate all these attributes
+    
+    # ws[: none] 一维转二维，水平合并  
     merge_data = np.hstack([WR, WS[:, None], TE[:, None]])
 
     # print('meger shape:', merge_data.shape)
@@ -82,9 +88,10 @@ def load_data(T=48, nb_flow=2, len_closeness=None, len_period=None, len_trend=No
               meta_data=True, meteorol_data=True, holiday_data=True):
     """
     """
+    #  assert 检查条件是否成立 否则抛出异常
     assert(len_closeness + len_period + len_trend > 0)
     # load data
-    # 13 - 16
+    # 13 - 16年数据
     data_all = []
     timestamps_all = list()
     for year in range(13, 17):
