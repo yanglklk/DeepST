@@ -7,7 +7,11 @@ from . import load_stdata
 from ..config import Config
 from ..utils import string2timestamp
 
+'''
 
+STMatrix 时空矩阵对象，每一个进行预测数据创建一个
+
+'''
 class STMatrix(object):
     """docstring for STMatrix"""
 
